@@ -38,7 +38,7 @@ export const IMAGES: Record<ImageKey, ImageEntry> = {
     file: "orchard-pruning",
     kind: "photo",
     alt: "Macro photograph of hands in linen sleeves pruning a young pear branch with a curved orchard knife.",
-    focus: [0.5, 0.5],
+    focus: [0.56, 0.5],
     tone: "#cfd3b8",
   },
   orchard: {
@@ -52,7 +52,7 @@ export const IMAGES: Record<ImageKey, ImageEntry> = {
     file: "orchard-hand-reaching",
     kind: "photo",
     alt: "A hand rises through the leaves toward a single ripe golden pear.",
-    focus: [0.5, 0.62],
+    focus: [0.5, 0.6],
     tone: "#5a6a34",
   },
   portrait: {
@@ -66,7 +66,7 @@ export const IMAGES: Record<ImageKey, ImageEntry> = {
     file: "pear-cutting",
     kind: "photo",
     alt: "Close-up of hands in emerald sleeves slicing a golden pear with a small silver knife.",
-    focus: [0.5, 0.5],
+    focus: [0.6, 0.45],
     tone: "#ddd2bd",
   },
   halves: {

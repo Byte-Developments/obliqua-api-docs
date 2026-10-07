@@ -49,7 +49,8 @@
     {
       "name": "builder-03",
       "kind": "cutout",
-      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152017_ce92fa45-96ab-4070-94ae-981061524ec1.png"
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152017_ce92fa45-96ab-4070-94ae-981061524ec1.png",
+      "cropLeft": 0.1
     },
     {
       "name": "monument-admirer",

@@ -9,7 +9,7 @@ export function OrchardScene() {
       <SceneCopy at={[226, 244, 284, 300]} className="absolute inset-0 text-ink">
         <div className="md:hidden absolute inset-x-0 bottom-0 h-[34vh] bg-gradient-to-t from-[#f1efe6] via-[#f1efe6]/80 to-transparent" />
         <div className="frame relative h-full">
-          <div className="absolute left-0 md:left-[8.333%] bottom-[12vh]">
+          <div className="absolute left-0 md:left-[8.333%] bottom-[12vh] md:bottom-auto md:top-[17vh]">
             <SmallLabel className="mb-4 opacity-70">03 — Cultivation</SmallLabel>
             <EditorialHeadline size="md" lines={["The first cut", <em key="e" className="italic">is a promise.</em>]} />
           </div>
@@ -30,7 +30,7 @@ export function OrchardScene() {
 
       <SceneCopy at={[410, 424, 452, 466]} className="absolute inset-0 text-paper shadow-soft">
         <div className="frame relative h-full">
-          <div className="absolute right-0 md:right-[8.333%] bottom-[14vh] text-right">
+          <div className="absolute left-0 md:left-[8.333%] top-[18vh]">
             <SmallLabel className="mb-4 opacity-80">05 — The Reach</SmallLabel>
             <EditorialHeadline size="md" lines={["Choose one.", <em key="e" className="italic">Only one.</em>]} />
           </div>
