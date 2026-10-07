@@ -25,7 +25,7 @@ export function MonumentPearScene() {
         </div>
       </SceneCopy>
 
-      <SceneCopy at={[1004, 1022, 1064, 1082]} className="absolute inset-0 text-paper">
+      <SceneCopy at={[1004, 1022, 1064, 1082]} className="absolute inset-0 text-paper shadow-soft">
         <div className="frame relative h-full">
           <div className="absolute right-0 md:right-[8.333%] top-[14vh] md:top-[16vh] w-[min(100%,330px)] text-left">
             <SmallLabel className="mb-5 text-paper/70">11 — Material</SmallLabel>

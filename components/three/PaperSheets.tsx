@@ -51,7 +51,6 @@ function createSheetMaterial(map: THREE.Texture, h: number) {
     emissiveIntensity: 0.38,
     roughness: 0.96,
     side: THREE.DoubleSide,
-    envMapIntensity: 0.25,
   });
   mat.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, u);

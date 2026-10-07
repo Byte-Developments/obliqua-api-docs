@@ -14,7 +14,7 @@ import { state } from "@/lib/store";
 // Scrolling pushes the curtain toward the lens until the camera passes through cloth, which
 // warms from charcoal to an overexposed cream — the seed of the next scene.
 
-const CHARCOAL = new THREE.Color("#46474b");
+const CHARCOAL = new THREE.Color("#5a5a5c");
 const CREAM = new THREE.Color("#f1e6d6");
 const PEACH = new THREE.Color("#f2dcc6");
 const tmp = new THREE.Color();
@@ -27,6 +27,7 @@ export function HeroWorld({ assets }: { assets: Assets }) {
   const curtain = useRef<THREE.Mesh>(null);
   const fabric = useRef<{ u: FabricUniforms; mat: THREE.MeshStandardMaterial } | null>(null);
   const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
+  const scene = useThree((s) => s.scene);
   const mobile = state.isMobile;
 
   const figureTex = assets.images.hero;
@@ -48,6 +49,8 @@ export function HeroWorld({ assets }: { assets: Assets }) {
     const active = t < T.pruning[0] + 40;
     g.visible = active;
     if (!active) return;
+    // the shared environment is the cobalt world; the curtain must stay charcoal
+    scene.environmentIntensity = 0.06;
 
     const p = range(t, T.hero[0], T.hero[1]);
     const q = range(t, T.fabric[0], T.fabric[1]);
@@ -56,19 +59,20 @@ export function HeroWorld({ assets }: { assets: Assets }) {
     const narrow = aspect < 0.9;
 
     // ---- the figure: stands right of centre, takes a small step toward the curtain
-    const figH = narrow ? halfH * 1.42 : halfH * 1.8;
-    const fx0 = narrow ? halfW * 0.18 : halfW * 0.36;
+    const figH = narrow ? halfH * 1.12 : halfH * 1.8;
+    const fx0 = narrow ? halfW * 0.22 : halfW * 0.36;
     const fig = figure.current!;
     fig.scale.set(figH * figAspect, figH, 1);
     fig.position.set(
       fx0 + smoothstep(0.12, 0.4, p) * halfW * 0.08,
-      -halfH + figH / 2 + (narrow ? -0.35 : 0.06),
+      -halfH + figH / 2 + (narrow ? -halfH * 0.12 : 0.06),
       0
     );
 
     // ---- the curtain: hangs at the right edge, then comes forward and swallows the frame
     const c = curtain.current!;
-    const cx0 = narrow ? halfW * 0.95 : halfW * 0.86;
+    // on phones only the curtain's leading folds enter the frame (it is 3.8 units wide)
+    const cx0 = narrow ? halfW * 0.7 + 1.9 : halfW * 0.86;
     const cx = keyframes(p, [[0.22, cx0], [0.78, halfW * 0.2], [1, 0.25]], ease.sineInOut);
     const cz = keyframes(t, [[T.hero[0] + 150 * 0.25, 0.65], [T.hero[0] + 150 * 0.55, 3.0], [T.fabric[1], 3.6]]);
     const widen = keyframes(p, [[0.4, 1], [0.78, 2.7]]);
@@ -98,10 +102,10 @@ export function HeroWorld({ assets }: { assets: Assets }) {
 
   return (
     <group ref={group}>
-      <hemisphereLight args={["#f4f1ea", "#3b4a6a", 0.4]} />
-      <ambientLight intensity={0.25} color="#e8ecf5" />
-      <directionalLight position={[-7, 2.5, 3.2]} intensity={4.2} color="#fff4e6" />
-      <directionalLight position={[5, -2, 3]} intensity={0.35} color="#9fc0ff" />
+      <hemisphereLight args={["#f4f1ea", "#5a5650", 0.35]} />
+      <ambientLight intensity={0.2} color="#f2efe9" />
+      <directionalLight position={[-7, 2.5, 3.2]} intensity={4.6} color="#fff4e6" />
+      <directionalLight position={[5, -2, 3]} intensity={0.25} color="#d9e4ff" />
       <mesh ref={figure} renderOrder={1}>
         <planeGeometry args={[1, 1]} />
         <meshBasicMaterial map={figureTex} transparent toneMapped={false} depthWrite={false} />

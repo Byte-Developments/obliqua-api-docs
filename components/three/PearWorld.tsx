@@ -62,7 +62,7 @@ const deckR = (LOWER.inner + LOWER.outer) / 2;
 const upperR = (UPPER.inner + UPPER.outer) / 2;
 
 const FIGURES: FigureSpec[] = [
-  { key: "admirer", at: [-7.6, 0, 5.6], height: 1.85, t: [1050, 1084, 1330, 1350] },
+  { key: "admirer", at: [-6.4, 0, 6.4], height: 1.85, t: [1050, 1084, 1330, 1350] },
   { key: "builder1", at: polar(deckR, -0.72, LOWER.levels[0] + 0.11), height: 1.8, t: [1218, 1244, 1336, 1352] },
   { key: "builder2", at: polar(deckR, 0.82, LOWER.levels[1] + 0.11), height: 1.8, t: [1232, 1258, 1336, 1352], flip: true },
   { key: "builder3", at: polar(upperR, 0.3, UPPER.levels[0] + 0.11), height: 1.25, t: [1248, 1274, 1336, 1352] },
@@ -128,6 +128,8 @@ export function PearWorld({ assets }: { assets: Assets }) {
     const bgMix = smoothstep(T.finale[0] - 12, T.finale[0] + 14, t);
     if (scene.background instanceof THREE.Color) scene.background.copy(BLUE).lerp(GALLERY, bgMix);
     if (!active) return;
+    // cobalt reflections as a rim, not a cast: blue bounce on yellow skin reads as olive
+    scene.environmentIntensity = 0.42;
 
     // ---- the pear: rises tilted from the lower left, rights itself, then holds still
     const rise = (x: number) => ease.power3Out(x);
@@ -211,7 +213,7 @@ export function PearWorld({ assets }: { assets: Assets }) {
       </group>
       <group ref={shadow}>
         <ContactShadow position={[0, 0.01, 0]} radius={7.5} opacity={0.55} />
-        <ContactShadow position={[-7.6, 0.012, 5.6]} radius={0.9} opacity={0.5} />
+        <ContactShadow position={[-6.4, 0.012, 6.4]} radius={0.9} opacity={0.5} />
       </group>
 
       <Scaffold assets={assets} progress={scaffoldP} />

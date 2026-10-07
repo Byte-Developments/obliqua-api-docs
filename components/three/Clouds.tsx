@@ -17,9 +17,9 @@ type CloudSpec = { pos: [number, number, number]; w: number; print: number; drif
 const CLOUDS: CloudSpec[] = [
   { pos: [-12.5, 12.5, -4], w: 6.2, print: 0, drift: 0.05 },
   { pos: [10.5, 3.2, -9], w: 7.5, print: 1, drift: 0.035, flip: true },
-  { pos: [12.5, -1.0, 2], w: 3.4, print: 0, drift: 0.07 },
-  { pos: [-7.5, 2.0, 5], w: 2.6, print: 1, drift: 0.09, flip: true },
-  { pos: [-6, 17, -16], w: 9.5, print: 1, drift: 0.025 },
+  { pos: [14, -1.0, -6], w: 3.4, print: 0, drift: 0.07 },
+  { pos: [-10, 3.0, 4], w: 2.6, print: 1, drift: 0.09, flip: true },
+  { pos: [-9, 18, -16], w: 9.5, print: 1, drift: 0.025 },
   { pos: [-17, -2, -12], w: 6, print: 0, drift: 0.03, flip: true },
 ];
 
@@ -64,15 +64,18 @@ export function Clouds({ assets }: { assets: Assets }) {
       const mesh = refs.current[i];
       if (!mesh) return;
       // slow pendulum drift (never wraps, so never pops) plus depth-scaled scroll parallax
-      const x = c.pos[0] + Math.sin(state.time * c.drift * 0.6 + i * 1.7) * 2.2 + (t - T.blue[0]) * 0.003 * (c.pos[2] + 20);
+      const x = c.pos[0] + Math.sin(state.time * c.drift * 0.6 + i * 1.7) * 2.2 + (t - T.blue[0]) * 0.0008 * (c.pos[2] + 20) * Math.sign(c.pos[0]);
       mesh.position.set(x, c.pos[1] - lift * (c.pos[2] + 22) * 0.25, c.pos[2]);
       mesh.scale.set(c.w * (c.flip ? -1 : 1), c.w / aspect, 1);
       ndc.copy(mesh.position).project(camera);
       let quiet = 0;
+      // on phones the copy spans the full width, so the zones do too
+      const narrow = state.aspect < 0.9;
       for (const q of QUIET) {
         const w = window4(t, q.t[0], q.t[1], q.t[2], q.t[3]);
         if (w <= 0) continue;
-        const inside = Math.min(smoothstep(q.x[0] - 0.15, q.x[0] + 0.05, ndc.x), 1 - smoothstep(q.x[1] - 0.05, q.x[1] + 0.15, ndc.x),
+        const x0 = narrow ? -1.2 : q.x[0], x1 = narrow ? 1.2 : q.x[1];
+        const inside = Math.min(smoothstep(x0 - 0.15, x0 + 0.05, ndc.x), 1 - smoothstep(x1 - 0.05, x1 + 0.15, ndc.x),
           smoothstep(q.y[0] - 0.15, q.y[0] + 0.05, ndc.y), 1 - smoothstep(q.y[1] - 0.05, q.y[1] + 0.15, ndc.y));
         quiet = Math.max(quiet, w * inside);
       }

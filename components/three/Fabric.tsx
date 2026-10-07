@@ -56,14 +56,13 @@ export const Fabric = forwardRef<THREE.Mesh, { assets: Assets; width: number; he
       normal.repeat.copy(map.repeat);
       normal.needsUpdate = true;
       const mat = new THREE.MeshStandardMaterial({
-        color: new THREE.Color("#46474b"),
+        color: new THREE.Color("#5a5a5c"),
         map,
         normalMap: normal,
         normalScale: new THREE.Vector2(0.3, 0.3),
         roughness: 0.88,
         metalness: 0,
         side: THREE.DoubleSide,
-        envMapIntensity: 0.05,
       });
       const uniforms: FabricUniforms = {
         uTime: { value: 0 },

@@ -7,6 +7,7 @@ export function OrchardScene() {
   return (
     <>
       <SceneCopy at={[226, 244, 284, 300]} className="absolute inset-0 text-ink">
+        <div className="md:hidden absolute inset-x-0 bottom-0 h-[34vh] bg-gradient-to-t from-[#f1efe6] via-[#f1efe6]/80 to-transparent" />
         <div className="frame relative h-full">
           <div className="absolute left-0 md:left-[8.333%] bottom-[12vh]">
             <SmallLabel className="mb-4 opacity-70">03 — Cultivation</SmallLabel>

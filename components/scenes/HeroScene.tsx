@@ -16,7 +16,7 @@ export function HeroScene() {
       />
       <SceneCopy at={[-10, -1, 18, 62]} className="absolute inset-0 text-paper" as="header">
         <div className="frame relative h-full">
-          <div className="absolute left-0 md:left-[8.333%] top-[15vh] md:top-[29vh] max-w-[11ch] md:max-w-none">
+          <div className="absolute left-0 md:left-[8.333%] top-[13vh] md:top-[29vh]">
             <SmallLabel className="mb-6 md:mb-8 opacity-80">Nº 01 — Appearance</SmallLabel>
             <EditorialHeadline as="h1" size="xl" lines={["Pear makes", <>you <em className="italic">appear.</em></>]} />
             <Fade className="mt-7 md:mt-10 max-w-[24ch] text-[13px] md:text-[15px] leading-[1.45] text-paper/85">

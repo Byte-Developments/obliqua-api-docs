@@ -151,7 +151,6 @@ export const PearModel = forwardRef<THREE.Group, { assets: Assets; detail?: "hig
         sheen: 0.35,
         sheenRoughness: 0.55,
         sheenColor: new THREE.Color("#f6dfa6"),
-        envMapIntensity: 0.55,
       });
       patchPearMaterial(skin, uniforms);
       const stemMat = new THREE.MeshStandardMaterial({ color: "#5b4127", roughness: 0.82 });
