@@ -1,0 +1,70 @@
+{
+  "_note": "Original images generated for this project (Higgsfield / GPT Image 2.5). Run 'npm run assets' to download + encode them into public/images.",
+  "assets": [
+    {
+      "name": "hero-classical-figure",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151630_a5c58756-1dac-4e2c-882b-784609f6db68.png"
+    },
+    {
+      "name": "orchard-pruning",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151630_da19f14a-c3d1-4e9c-8764-22c9f14461a1.png"
+    },
+    {
+      "name": "orchard-wide",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151630_0e108c80-713e-4ade-a86d-89a1de43fd1d.png"
+    },
+    {
+      "name": "orchard-hand-reaching",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151930_e3645e34-203a-4cdd-8b6c-b363b3a29b78.png"
+    },
+    {
+      "name": "renaissance-pear-person",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151631_f9fdddc9-7620-476d-bb27-5333920c1ab3.png"
+    },
+    {
+      "name": "pear-cutting",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151930_798680f0-7f95-4a02-93e8-6638d2af64e2.png"
+    },
+    {
+      "name": "pear-halves",
+      "kind": "photo",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151931_5d0527ba-8782-4d0a-9468-072ca10d80b1.png"
+    },
+    {
+      "name": "builder-01",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_151930_43eff699-a72f-41bb-9800-eee9fa26ae38.png"
+    },
+    {
+      "name": "builder-02",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152016_d4f2ec35-5b56-42b4-afdd-197563547911.png"
+    },
+    {
+      "name": "builder-03",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152017_ce92fa45-96ab-4070-94ae-981061524ec1.png"
+    },
+    {
+      "name": "monument-admirer",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152017_0b82adfd-1e11-48f1-9654-7583e7df5805.png"
+    },
+    {
+      "name": "cloud",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152018_2427f560-59a3-4762-b16d-686d3def8607.png"
+    },
+    {
+      "name": "foreground-leaves",
+      "kind": "cutout",
+      "url": "https://d8j0ntlcm91z4.cloudfront.net/user_39wFXBECypBbdaTRmFdNe139NiV/hf_20261007_152158_6f8aa216-0c67-4cce-8a6c-209ef0d7547b.png"
+    }
+  ]
+}
